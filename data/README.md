@@ -1,1 +1,1 @@
-Place the original, authorized Level-1 experiment CSV files under `data/A_1/` using the class directories expected by script 00. Alternatively, use an already prepared FFT feature archive for subsequent stages. Raw experimental recordings are **not** included in this repository.
+,.
