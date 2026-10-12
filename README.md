@@ -23,7 +23,6 @@ Model evaluation follows a five-fold experiment-wise cross-validation protocol, 
 - `results/` — Selected audited results, including external out-of-fold (OOF) classification metrics, experimental partitions, experiment-level error analyses, and prediction comparisons.
 - `verification_checks.json` — Verification records supporting the consistency and integrity of the supplied results.
 - `requirements.txt` — Python package dependencies for the computational workflow.
-- `LICENSE` — MIT License.
 
 The original experimental recordings are publicly available separately and are not redistributed in this repository.
 
@@ -74,7 +73,10 @@ Expected input location:
 ```text
 project_root/
 ├── A_1/
-│   └── [original dataset class subdirectories]
+│   ├── Healthy/
+│   ├── 6Nm/level_1/
+│   ├── 9Nm/level_1/
+│   └── NoBolt/level_1/
 ├── scripts/
 ├── results/
 ├── requirements.txt
@@ -189,7 +191,3 @@ The original experimental data are not redistributed in this GitHub repository.
 ## Citation
 
 If you use the research code or experimental results provided here, please cite the associated manuscript and the original dataset publication.
-
-## License
-
-This repository's code is distributed under the MIT License. See the [LICENSE](LICENSE) file for the complete terms.
