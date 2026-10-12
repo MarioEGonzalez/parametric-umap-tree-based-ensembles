@@ -1,0 +1,10 @@
+numpy
+pandas
+scipy
+scikit-learn
+umap-learn[parametric_umap]
+tensorflow
+lightgbm
+xgboost
+catboost
+matplotlib
