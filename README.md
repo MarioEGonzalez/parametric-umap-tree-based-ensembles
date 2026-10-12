@@ -22,10 +22,9 @@ Model evaluation follows a five-fold experiment-wise cross-validation protocol, 
 - `scripts/` — Python scripts for signal preprocessing, FFT feature extraction, experiment-wise data partitioning, dimensionality reduction, classifier training, and result verification.
 - `results/` — Selected audited results, including external out-of-fold (OOF) classification metrics, experimental partitions, experiment-level error analyses, and prediction comparisons.
 - `verification_checks.json` — Verification records supporting the consistency and integrity of the supplied results.
-- `data/` — Instructions for obtaining and organizing the original experimental vibration recordings.
 - `requirements.txt` — Python package dependencies used in the computational workflow.
 
-The original experimental recordings are available through the publicly released dataset cited in the manuscript and are not redistributed in this repository.
+The original experimental recordings are publicly available through the dataset cited in the manuscript and are not redistributed in this repository.
 
 ## Computational Workflow
 
@@ -38,6 +37,16 @@ The analysis follows these main stages:
 5. **Verification and analysis:** Examine classification errors, compare predictions, and summarize results across the evaluated pipelines.
 
 Python 3.10 is recommended. The computational workflow uses the directory organization documented in the supplied scripts. The project root can be configured through the `WILEY_PROJECT_DIR` environment variable.
+
+### Experimental Data Preparation
+
+The original vibration measurements must be obtained separately from the publicly available dataset referenced in the Data Availability section.
+
+The analysis uses the subset corresponding to structural Level 1 and a white-noise excitation amplitude of 1, comprising 20 independent experiments for each of the four structural conditions.
+
+After obtaining the dataset, organize the recordings locally according to the input directory structure expected by `00_prepare_fft_and_group_folds.py`. The preprocessing script expects the corresponding experimental class directories under `data/A_1/` within the configured project root.
+
+The local input directories and experimental recordings are not included in this repository.
 
 ## Main Experimental Results
 
@@ -53,6 +62,8 @@ Parametric UMAP combined with ExtraTrees or CatBoost achieved the highest extern
 
 PCA combined with XGBoost provided the strongest PCA-based baseline.
 
+These results correspond to window-level predictions obtained from held-out experimental groups. Windows originating from the same experiment are correlated and are not treated as independent experiments.
+
 ## Reproducibility and Verification
 
 The repository includes research scripts, selected experimental results, and verification records documenting the computational methodology.
@@ -60,6 +71,8 @@ The repository includes research scripts, selected experimental results, and ver
 The supplied files preserve the principal preprocessing procedures, representation configurations, classifier settings, experiment-wise validation protocol, and selected audited results reported in the manuscript.
 
 Reproducing an analysis requires the original dataset, the appropriate computational environment, and the intermediate artifacts specified by the corresponding scripts.
+
+The verification records document the consistency of the reported experimental results and the integrity of the experiment-wise evaluation procedure.
 
 ## Data Availability
 
